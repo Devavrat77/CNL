@@ -1,0 +1,15 @@
+Commands
+
+
+a. Capture all TCP traffic to/from Facebook when logging into your Facebook account:
+ip.addr == facebook_server_ip_address and tcp
+
+b. Capture all HTTP traffic to/from Facebook when logging into your Facebook account:
+ip.addr == facebook_server_ip_address and http
+
+c. Write a display filter expression to count all TCP packets with the flags SYN, PSH, and RST set:
+tcp.flags.syn == 1 and tcp.flags.psh == 1 and tcp.flags.rst == 1
+
+d. Count how many TCP packets you received from/sent to Facebook (other website) and how many were also HTTP packets:
+ip.addr == facebook_server_ip_address and tcp
+ip.addr == facebook_server_ip_address and http
